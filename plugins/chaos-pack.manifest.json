@@ -1,0 +1,225 @@
+{
+  "identifier": "run.vineyard.plugins.chaos",
+  "content_type": "vineyard:plugin",
+  "name": "Chaos Reference Pack",
+  "version": "1.0.0",
+  "description": "A bundle of 6 graph-manipulation plugins for demo/validation (one file = multiple plugins). Installing adds all 6 together.",
+  "author": {
+    "name": "vineyard-run",
+    "url": "https://github.com/vineyard-run"
+  },
+  "license": "MIT",
+  "icon": "boxes",
+  "platforms": {
+    "primary": "web",
+    "web": {
+      "runtime": "sandbox-js",
+      "entry": "dist/chaos-pack.js"
+    }
+  },
+  "distribution": {
+    "kind": "git",
+    "repository": "https://github.com/Vineyard-Intelligence/pluginpack-chaos",
+    "ref": "v1.0.0",
+    "path": "plugins/chaos-pack.manifest.json"
+  },
+  "plugins": [
+    {
+      "identifier": "run.vineyard.plugins.korean_roulette",
+      "content_type": "vineyard:plugin",
+      "name": "Korean Roulette",
+      "version": "1.0.0",
+      "description": "Randomly keeps just one node and deletes every other node and edge in the graph.",
+      "icon": "skull",
+      "platforms": {
+        "primary": "web",
+        "web": {
+          "runtime": "sandbox-js",
+          "entry": "inline"
+        }
+      },
+      "io": {
+        "consumes": [],
+        "produces": []
+      },
+      "scopes": {
+        "graph": [
+          "node:read",
+          "node:delete",
+          "edge:read",
+          "edge:delete"
+        ]
+      },
+      "lifecycle": {
+        "persistence": "ephemeral",
+        "controls": [
+          "progress",
+          "cancel"
+        ],
+        "progress": "indeterminate"
+      }
+    },
+    {
+      "identifier": "run.vineyard.plugins.russian_roulette",
+      "content_type": "vineyard:plugin",
+      "name": "Russian Roulette",
+      "version": "1.0.0",
+      "description": "Deletes one random node and its connected edges. Everything else is kept.",
+      "icon": "target",
+      "platforms": {
+        "primary": "web",
+        "web": {
+          "runtime": "sandbox-js",
+          "entry": "inline"
+        }
+      },
+      "io": {
+        "consumes": [],
+        "produces": []
+      },
+      "scopes": {
+        "graph": [
+          "node:read",
+          "node:delete",
+          "edge:read",
+          "edge:delete"
+        ]
+      },
+      "lifecycle": {
+        "persistence": "ephemeral",
+        "controls": [
+          "cancel"
+        ]
+      }
+    },
+    {
+      "identifier": "run.vineyard.plugins.thanos_snap",
+      "content_type": "vineyard:plugin",
+      "name": "Thanos Snap",
+      "version": "1.0.0",
+      "description": "Randomly deletes about half (floor(n/2)) of the nodes. Surviving nodes keep their relationships.",
+      "icon": "hand-sparkles",
+      "platforms": {
+        "primary": "web",
+        "web": {
+          "runtime": "sandbox-js",
+          "entry": "inline"
+        }
+      },
+      "io": {
+        "consumes": [],
+        "produces": []
+      },
+      "scopes": {
+        "graph": [
+          "node:read",
+          "node:delete",
+          "edge:read",
+          "edge:delete"
+        ]
+      },
+      "lifecycle": {
+        "persistence": "ephemeral",
+        "controls": [
+          "progress",
+          "cancel"
+        ],
+        "progress": "determinate"
+      }
+    },
+    {
+      "identifier": "run.vineyard.plugins.black_hole",
+      "content_type": "vineyard:plugin",
+      "name": "Black Hole",
+      "version": "1.0.0",
+      "description": "Deletes all directly connected (1-hop) neighbors of the selected base node. The base node is kept.",
+      "icon": "circle-dot",
+      "platforms": {
+        "primary": "web",
+        "web": {
+          "runtime": "sandbox-js",
+          "entry": "inline"
+        }
+      },
+      "io": {
+        "consumes": [],
+        "produces": []
+      },
+      "scopes": {
+        "graph": [
+          "node:read",
+          "node:delete",
+          "edge:read",
+          "edge:delete"
+        ]
+      },
+      "lifecycle": {
+        "persistence": "ephemeral",
+        "controls": [
+          "cancel"
+        ]
+      }
+    },
+    {
+      "identifier": "run.vineyard.plugins.dumb_ai_optimizer",
+      "content_type": "vineyard:plugin",
+      "name": "Dumb AI Optimizer",
+      "version": "1.0.0",
+      "description": "Shows an “AI is optimizing the graph…” progress bar, then claims “Optimization complete” — but actually changes nothing.",
+      "icon": "sparkles",
+      "platforms": {
+        "primary": "web",
+        "web": {
+          "runtime": "sandbox-js",
+          "entry": "inline"
+        }
+      },
+      "io": {
+        "consumes": [],
+        "produces": []
+      },
+      "scopes": {},
+      "lifecycle": {
+        "persistence": "ephemeral",
+        "controls": [
+          "progress",
+          "cancel"
+        ],
+        "progress": "determinate"
+      }
+    },
+    {
+      "identifier": "run.vineyard.plugins.schrodingers_node",
+      "content_type": "vineyard:plugin",
+      "name": "Schrödinger's Node",
+      "version": "1.0.0",
+      "description": "Picks one random node and deletes it with 50% probability, or does nothing with 50% probability.",
+      "icon": "box",
+      "platforms": {
+        "primary": "web",
+        "web": {
+          "runtime": "sandbox-js",
+          "entry": "inline"
+        }
+      },
+      "io": {
+        "consumes": [],
+        "produces": []
+      },
+      "scopes": {
+        "graph": [
+          "node:read",
+          "node:delete",
+          "edge:read",
+          "edge:delete"
+        ]
+      },
+      "lifecycle": {
+        "persistence": "ephemeral",
+        "controls": [
+          "cancel"
+        ]
+      }
+    }
+  ]
+}
