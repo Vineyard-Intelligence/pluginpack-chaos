@@ -35,7 +35,7 @@
         "primary": "web",
         "web": {
           "runtime": "sandbox-js",
-          "entry": "inline"
+          "entry": "dist/pack.mjs"
         }
       },
       "io": {
@@ -70,7 +70,7 @@
         "primary": "web",
         "web": {
           "runtime": "sandbox-js",
-          "entry": "inline"
+          "entry": "dist/pack.mjs"
         }
       },
       "io": {
@@ -103,7 +103,7 @@
         "primary": "web",
         "web": {
           "runtime": "sandbox-js",
-          "entry": "inline"
+          "entry": "dist/pack.mjs"
         }
       },
       "io": {
@@ -138,7 +138,7 @@
         "primary": "web",
         "web": {
           "runtime": "sandbox-js",
-          "entry": "inline"
+          "entry": "dist/pack.mjs"
         }
       },
       "io": {
@@ -165,13 +165,13 @@
       "content_type": "vineyard:plugin",
       "name": "Dumb AI Optimizer",
       "version": "1.0.0",
-      "description": "Shows an “AI is optimizing the graph…” progress bar, then claims “Optimization complete” — but actually changes nothing.",
+      "description": "Shows an \u201cAI is optimizing the graph\u2026\u201d progress bar, then claims \u201cOptimization complete\u201d \u2014 but actually changes nothing.",
       "icon": "sparkles",
       "platforms": {
         "primary": "web",
         "web": {
           "runtime": "sandbox-js",
-          "entry": "inline"
+          "entry": "dist/pack.mjs"
         }
       },
       "io": {
@@ -191,7 +191,7 @@
     {
       "identifier": "run.vineyard.plugins.schrodingers_node",
       "content_type": "vineyard:plugin",
-      "name": "Schrödinger's Node",
+      "name": "Schr\u00f6dinger's Node",
       "version": "1.0.0",
       "description": "Picks one random node and deletes it with 50% probability, or does nothing with 50% probability.",
       "icon": "box",
@@ -199,7 +199,7 @@
         "primary": "web",
         "web": {
           "runtime": "sandbox-js",
-          "entry": "inline"
+          "entry": "dist/pack.mjs"
         }
       },
       "io": {
