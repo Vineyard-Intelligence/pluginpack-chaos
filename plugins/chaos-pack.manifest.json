@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "description": "A bundle of 6 graph-manipulation plugins for demo/validation (one file = multiple plugins). Installing adds all 6 together.",
   "author": {
-    "name": "vineyard-run",
+    "name": "VINEYARD",
     "url": "https://github.com/vineyard-run"
   },
   "license": "MIT",
