@@ -20,11 +20,7 @@ read/delete scopes.
 | Path | Purpose |
 | --- | --- |
 | `plugins/chaos-pack.manifest.json` | The Plugin Pack manifest (metadata + the six plugin definitions) |
-| `dist/chaos-pack.js` | The runnable bundle (see note below) |
-
-> **Bundle not yet committed.** `dist/chaos-pack.js` — the executable the manifest references — is
-> built from the plugin sources and is not in this repo yet. The pack is fully listable and
-> browsable from its manifest; it will only *run* in-app once the bundle is added.
+| `dist/pack.mjs` | The runnable bundle |
 
 ## Listing / installing
 
