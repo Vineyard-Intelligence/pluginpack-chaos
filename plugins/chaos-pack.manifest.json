@@ -2,7 +2,7 @@
   "identifier": "run.vineyard.pluginpacks.chaos",
   "content_type": "vineyard:pluginpack",
   "name": "Chaos Reference Pack",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Six graph-manipulation plugins for demos and validation.",
   "author": {
     "name": "VINEYARD",
