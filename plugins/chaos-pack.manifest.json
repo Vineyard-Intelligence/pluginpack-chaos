@@ -17,12 +17,6 @@
       "entry": "dist/pack.mjs"
     }
   },
-  "distribution": {
-    "kind": "git",
-    "repository": "https://github.com/Vineyard-Intelligence/pluginpack-chaos",
-    "ref": "v1.0.2",
-    "path": "plugins/chaos-pack.manifest.json"
-  },
   "plugins": [
     {
       "identifier": "run.vineyard.plugins.korean_roulette",
