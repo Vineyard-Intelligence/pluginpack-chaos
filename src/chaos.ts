@@ -175,7 +175,7 @@ export default definePluginPack({
     identifier: 'run.vineyard.pluginpacks.chaos',
     content_type: 'vineyard:pluginpack',
     name: 'Chaos Reference Pack',
-    version: '1.0.3',
+    version: '1.0.4',
     description: 'Six graph-manipulation plugins for demos and validation.',
     plugins: [koreanRoulette, russianRoulette, thanosSnap, blackHole, dumbAiOptimizer, schrodingersNode],
 });
