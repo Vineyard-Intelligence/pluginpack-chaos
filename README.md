@@ -20,12 +20,23 @@ read/delete scopes.
 | Path | Purpose |
 | --- | --- |
 | `plugins/chaos-pack.manifest.json` | The Plugin Pack manifest (metadata + the six plugin definitions) |
+| `src/` | The source of the bundle |
 | `dist/pack.mjs` | The runnable bundle |
 
 ## Listing / installing
 
 Listed in the [registry](https://github.com/Vineyard-Intelligence/registry); browsable at
 [docs.vineyard.run](https://docs.vineyard.run/).
+
+## Building from source
+
+`src/` is the source of `dist/pack.mjs`. The build pins esbuild, so the published bundle can be
+checked against the source:
+
+```bash
+node build.mjs
+git diff --exit-code dist/pack.mjs
+```
 
 ## License
 
