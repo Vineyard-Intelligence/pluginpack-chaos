@@ -170,12 +170,49 @@ const schrodingersNode = definePlugin({
     },
 });
 
+// The pack's page in the marketplace drawer, in Markdown. One entry per line so that backticks and
+// quotes in the Markdown need no template-literal escaping.
+const DESCRIPTION = [
+    'A reference pack of six small plugins that change the graph in obvious ways, most of them by deleting things at random. It exists for demonstrating and validating the plugin system: several plugins in one bundle, progress and cancel controls, graph read and delete scopes, and a plugin that requests no scopes at all. It has no investigative use.',
+    '',
+    'Five of the six delete nodes and edges from the open project. The pack is meant for a throwaway project.',
+    '',
+    '## Plugins',
+    '',
+    '| Plugin | Acts on | Effect |',
+    '| --- | --- | --- |',
+    '| Korean Roulette | the whole graph | Keeps one node chosen at random and deletes every other node and every edge. No change when the graph has one node or none. |',
+    '| Russian Roulette | the whole graph | Deletes one random node and the edges connected to it. Everything else is kept. |',
+    '| Thanos Snap | the whole graph | Deletes floor(n/2) randomly chosen nodes and their edges. Edges between surviving nodes are kept. |',
+    '| Black Hole | the first selected node | Deletes every node directly connected to it, and the edges linking them. The selected node is kept. |',
+    '| Dumb AI Optimizer | nothing | Shows an "AI is optimizing the graph…" progress bar for about four seconds, then reports "Optimization complete". Requests no scopes and changes nothing. |',
+    "| Schrödinger's Node | the whole graph | Picks one random node and, with 50% probability, deletes it and its edges; otherwise leaves it. |",
+    '',
+    'Except for Black Hole, the plugins ignore the selection. Choices are random on every run, so results cannot be reproduced. Every plugin can be cancelled; Korean Roulette, Thanos Snap and Dumb AI Optimizer also report progress. No plugin creates or edits nodes.',
+    '',
+    '## Requirements',
+    '',
+    'None. No API key, no type pack, no desktop app. The plugins run in the browser sandbox. Five request the graph scopes `node:read`, `node:delete`, `edge:read` and `edge:delete`; Dumb AI Optimizer requests none.',
+    '',
+    '## What it contacts',
+    '',
+    'Nothing. No plugin in the pack has a network scope.',
+    '',
+    '## Source',
+    '',
+    'https://github.com/Vineyard-Intelligence/pluginpack-chaos (MIT)',
+    '',
+    '`node build.mjs` rebuilds `dist/pack.mjs` from `src/` with a pinned esbuild.',
+
+].join('\n');
+
 // The pack — one file, six plugins.
 export default definePluginPack({
     identifier: 'run.vineyard.pluginpacks.chaos',
     content_type: 'vineyard:pluginpack',
     name: 'Chaos Reference Pack',
-    version: '1.0.4',
-    description: 'Six graph-manipulation plugins for demos and validation.',
+    version: '1.1.0',
+    summary: 'Six graph-manipulation plugins for demos and validation.',
+    description: DESCRIPTION,
     plugins: [koreanRoulette, russianRoulette, thanosSnap, blackHole, dumbAiOptimizer, schrodingersNode],
 });
